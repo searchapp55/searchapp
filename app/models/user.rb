@@ -4,4 +4,6 @@ class User < ApplicationRecord
   belongs_to :organization, primary_key: '_id'
   has_many :submissions, class_name: 'Ticket', primary_key: '_id', foreign_key: 'submitter_id'
   has_many :assignments, class_name: 'Ticket', primary_key: '_id', foreign_key: 'assignee_id'
+
+  serialize :tags, Array
 end

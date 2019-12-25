@@ -3,4 +3,7 @@ class Organization < ApplicationRecord
 
   has_many :users
   has_many :tickets
+
+  serialize :domain_names, Array
+  serialize :tags, Array
 end
