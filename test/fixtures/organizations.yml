@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  _id: 1
+  url: MyString
+  external_id: MyString
+  name: MyString
+  domain_names: MyText
+  details: MyString
+  shared_tickets: false
+  tags: MyText
+
+two:
+  _id: 1
+  url: MyString
+  external_id: MyString
+  name: MyString
+  domain_names: MyText
+  details: MyString
+  shared_tickets: false
+  tags: MyText
