@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  _id: MyString
+  url: MyString
+  external_id: MyString
+  type: 
+  subject: MyString
+  description: MyString
+  priority: MyString
+  status: MyString
+  submitter_id: 1
+  assignee_id: 1
+  organization_id: 1
+  tags: MyText
+  has_incidents: false
+  due_at: 2019-12-25 09:48:14
+  via: MyString
+
+two:
+  _id: MyString
+  url: MyString
+  external_id: MyString
+  type: 
+  subject: MyString
+  description: MyString
+  priority: MyString
+  status: MyString
+  submitter_id: 1
+  assignee_id: 1
+  organization_id: 1
+  tags: MyText
+  has_incidents: false
+  due_at: 2019-12-25 09:48:14
+  via: MyString

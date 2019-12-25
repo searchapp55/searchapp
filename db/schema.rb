@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_094056) do
+ActiveRecord::Schema.define(version: 2019_12_25_094814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,27 @@ ActiveRecord::Schema.define(version: 2019_12_25_094056) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["_id"], name: "index_organizations_on__id", unique: true
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string "_id"
+    t.string "url"
+    t.string "external_id"
+    t.string "type"
+    t.string "subject"
+    t.string "description"
+    t.string "priority"
+    t.string "status"
+    t.integer "submitter_id"
+    t.integer "assignee_id"
+    t.integer "organization_id"
+    t.text "tags"
+    t.boolean "has_incidents"
+    t.datetime "due_at"
+    t.string "via"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["_id"], name: "index_tickets_on__id", unique: true
   end
 
 end
