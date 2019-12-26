@@ -5,8 +5,6 @@ class User < ApplicationRecord
   has_many :submissions, class_name: 'Ticket', primary_key: '_id', foreign_key: 'submitter_id'
   has_many :assignments, class_name: 'Ticket', primary_key: '_id', foreign_key: 'assignee_id'
 
-  serialize :tags, Array
-
   SEARCHABLE_FIELDS = [
     :_id, 
     :url,
@@ -27,4 +25,6 @@ class User < ApplicationRecord
     :tags,
     :suspended,
     :role]
+
+  ARRAY_FIELDS = [:tags]
 end

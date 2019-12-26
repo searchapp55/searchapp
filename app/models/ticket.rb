@@ -6,8 +6,6 @@ class Ticket < ApplicationRecord
   belongs_to :submitter, class_name: 'User'
   belongs_to :assignee, class_name: 'User'
 
-  serialize :tags, Array
-
   SEARCHABLE_FIELDS = [
     :_id, 
     :url,
@@ -25,4 +23,6 @@ class Ticket < ApplicationRecord
     :has_incidents,
     :due_at,
     :via ]
+
+    ARRAY_FIELDS = [:tags]
 end

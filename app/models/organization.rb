@@ -4,9 +4,6 @@ class Organization < ApplicationRecord
   has_many :users
   has_many :tickets
 
-  serialize :domain_names, Array
-  serialize :tags, Array
-
   SEARCHABLE_FIELDS = [
     :_id, 
     :url, 
@@ -17,4 +14,6 @@ class Organization < ApplicationRecord
     :details,
     :shared_tickets,
     :tags ]
+
+    ARRAY_FIELDS = [:domain_names, :tags]
 end

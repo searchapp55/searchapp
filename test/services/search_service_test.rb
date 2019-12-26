@@ -58,6 +58,16 @@ class SearchServiceTest < ActiveSupport::TestCase
     assert_equal 1, result.size
   end
 
+  test "can search for multiple tags" do
+    model = Ticket
+    field = "tags"
+    query = "Minnesota, New Jersey"
+    result = ::SearchService.call(model, field, query)
+    assert_equal "fc5a8a70-3814-4b17-a6e9-583936fca909", result.first["_id"]
+    assert_equal ["Minnesota", "New Jersey", "Texas", "Nevada"], result.first["tags"]
+    assert_equal 1, result.size
+  end
+
   test "can return multiple records" do
     model = User
     field = "active"
