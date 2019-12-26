@@ -1,0 +1,26 @@
+<h1>Search <%= @model %></h1>
+
+<p>Also search: 
+  <%= link_to 'Users', root_path(model: 'user') %>
+  <%= link_to 'Tickets', root_path(model: 'ticket') %>
+  <%= link_to 'Organizations', root_path(model: 'organization') %>
+</p>
+
+<%= form_tag("/", method: "get") do %>
+  <%= select_tag(:field, options_for_select(@fields)) %>
+  <%= text_field_tag(:query) %>
+  <%= hidden_field(nil, :model, value: params[:model] || 'user') %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% if @query && @records.empty? %>
+  <p>No records found</p>
+<% end %>
+
+<% @records.each do |record| %>
+  <ul>
+  <% record.each do |attribute| %>
+    <li><%= attribute[0] %>: <%= attribute[1] %></li>
+  <% end %>
+  </ul>
+<% end %>
