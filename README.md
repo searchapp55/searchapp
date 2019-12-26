@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
+Install docker
 
-Things you may want to cover:
+## Instructions
+Start docker-compose
+```bash
+docker-compose build
+```
 
-* Ruby version
+Setup the DB with seeds
+```bash
+docker-compose run web rails db:setup
+```
 
-* System dependencies
+Start services
+```bash
+docker-compose up
+```
 
-* Configuration
+Destroy services
+```bash
+docker-compose down
+```
 
-* Database creation
+Rebuild
+```bash
+docker-compose down && docker-compose up --build
+```
 
-* Database initialization
+## Assumptions
+Search queries must fully match values in the database.
 
-* How to run the test suite
+Tags and domain name arrays are represented using Postgres arrays and have different behavior. It's possible to search for an entire tag or multiple tags seperated by commas.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
